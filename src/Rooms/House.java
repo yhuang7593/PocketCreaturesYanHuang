@@ -20,7 +20,7 @@ public class House extends Room{
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("Welcome to the house. Before you begin, choose your starter creature. ,
+        System.out.println("Welcome to the house. Before you begin, choose your starter creature.");
 
 
     }

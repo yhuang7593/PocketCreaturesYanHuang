@@ -38,15 +38,13 @@ public class Runner {
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose A.B,C");
-			String move = in.nextLine();			{
+			String move = in.nextLine();
+			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-				
 			}
-			else {
+			else{
 				System.out.println("Please choose a valid move.");
 			}
-			
-			
 		}
 		in.close();
 	}
