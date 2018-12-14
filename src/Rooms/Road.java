@@ -8,5 +8,11 @@ public class Road extends Room{
     }
 
     @Override
-    public void enterRoom(Person x) {
+    public void enterRoom(Person x)
+    {
+        System.out.println("You have entered a room.");
+        occupant = x;
+        x.setxLoc(this.xLoc);
+        x.setyLoc(this.yLoc);
+    }
 }
