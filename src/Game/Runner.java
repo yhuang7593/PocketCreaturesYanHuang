@@ -1,10 +1,8 @@
 package Game;
 
 import People.Person;
-import Rooms.Lab;
 import Rooms.Room;
-import Rooms.WinningRoom;
-	
+
 import java.util.Scanner;
 
 public class Runner {
