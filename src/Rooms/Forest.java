@@ -24,5 +24,13 @@ public class Forest extends Room{
             x.setxLoc(this.xLoc);
             x.setyLoc(this.yLoc);
         }
+    /**
+     * Removes the player from the room.
+     * @param x
+     */
+    public void leaveForest(Person x)
+    {
+        occupant = null;
+    }
     }
 

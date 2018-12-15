@@ -3,11 +3,14 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
-import Rooms.House;
+
 import java.util.Scanner;
 
 public class Runner {
+
+
     private static boolean gameOn = true;
+
     public static void main(String[] args)
     {
         Room[][] building = new Room[5][5];
@@ -17,7 +20,8 @@ public class Runner {
         {
             for (int y = 0; y < building[x].length; y++)
             {
-                building[x][y] = new House(x,y);
+                building[x][y] = new Room(x,y);
+
             }
         }
 
@@ -116,5 +120,7 @@ public class Runner {
     {
         gameOn = false;
     }
+
+
 
 }
