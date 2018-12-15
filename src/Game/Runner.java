@@ -1,15 +1,14 @@
 package Game;
 
 import People.Person;
-import Rooms.House;
 import Rooms.Room;
-import Rooms.Forest;
 import Rooms.WinningRoom;
-import Rooms.Road;
+import Rooms.House;
 import java.util.Scanner;
 
 public class Runner {
     private static boolean gameOn = true;
+
     public static void main(String[] args)
     {
         Room[][] building = new Room[5][5];
@@ -19,20 +18,15 @@ public class Runner {
         {
             for (int y = 0; y < building[x].length; y++)
             {
-                building[x][y] = new House(x,y);
                 building[x][y] = new Room(x,y);
-                building[x][y] = new Forest(x,y);
-                building[x][y] = new Road(x,y);
-                building[x][y] = new WinningRoom(x,y);
             }
         }
 
 
-        //Create a randOM lab room.
+        //Create a random winning room.
         int x = (int)(Math.random()*building.length);
         int y = (int)(Math.random()*building.length);
-        building[x][y] = new Rooms.House(0,0);
-        building[x][y] = new Rooms.Forest(1,0);
+        building[x][y] = new WinningRoom(x, y);
 
         //Setup player 1 and the input scanner
         Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -40,7 +34,7 @@ public class Runner {
         Scanner in = new Scanner(System.in);
         while(gameOn)
         {
-            System.out.println("Where would you like to move? (Choose N,W,E,S");
+            System.out.println("Where would you like to move? (Choose N, S, E, W)");
             String move = in.nextLine();
             if(validMove(move, player1, building))
             {
@@ -50,6 +44,8 @@ public class Runner {
             else {
                 System.out.println("Please choose a valid move.");
             }
+
+
         }
         in.close();
     }
@@ -76,7 +72,7 @@ public class Runner {
                 {
                     return false;
                 }
-            case "w":
+            case "e":
                 if (p.getyLoc()< map[p.getyLoc()].length -1)
                 {
                     map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -88,7 +84,7 @@ public class Runner {
                     return false;
                 }
 
-            case "e":
+            case "s":
                 if (p.getxLoc() < map.length - 1)
                 {
                     map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -100,7 +96,7 @@ public class Runner {
                     return false;
                 }
 
-            case "s":
+            case "w":
                 if (p.getyLoc() > 0)
                 {
                     map[p.getxLoc()][p.getyLoc()].leaveRoom(p);

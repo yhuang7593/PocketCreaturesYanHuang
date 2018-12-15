@@ -3,7 +3,6 @@ import People.Person;
 public class House extends Room {
     public House(int x, int y) {
         super(x, y);
-
     }
 
     /**
