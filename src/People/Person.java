@@ -8,7 +8,6 @@ public class Person {
 	String familyName;
 	int xLoc, yLoc;
 
-
 	public int getxLoc() {
 		return xLoc;
 	}
@@ -32,6 +31,11 @@ public class Person {
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
 	}
-
+public void collectAll(int amount){
+		while (amount<4){
+			amount=amount+1;
+			System.out.println(amount);
+		}
+}
 
 }
