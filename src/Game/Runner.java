@@ -27,7 +27,7 @@ public class Runner {
 		//Create a randOM lab room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new Lab(0,0);
+		building[x][y] = new Rooms.House(0,0);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -35,12 +35,14 @@ public class Runner {
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
-			System.out.println("Where would you like to move? (Choose A.B,C");
+			System.out.println("Where would you like to move? (Choose N,W,E,S");
 			String move = in.nextLine();
+			if(validMove(move, player1, building))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+
 			}
-			else{
+			else {
 				System.out.println("Please choose a valid move.");
 			}
 		}
@@ -58,7 +60,7 @@ public class Runner {
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
-			case "a":
+			case "n":
 				if (p.getxLoc() > 0)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -69,7 +71,7 @@ public class Runner {
 				{
 					return false;
 				}
-			case "b":
+			case "w":
 				if (p.getyLoc()< map[p.getyLoc()].length -1)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -81,7 +83,7 @@ public class Runner {
 					return false;
 				}
 
-			case "c":
+			case "e":
 				if (p.getxLoc() < map.length - 1)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -93,7 +95,7 @@ public class Runner {
 					return false;
 				}
 
-			case "d":
+			case "s":
 				if (p.getyLoc() > 0)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
