@@ -117,6 +117,4 @@ public class Runner {
         gameOn = false;
     }
 
-
-
 }
